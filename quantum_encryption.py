@@ -45,3 +45,16 @@ for digit in third_digit:
 # Prints all the circuits
 for i in range(len(circuits)):
   print(circuits[i])
+
+# Gives the amplitudes for each letter
+simulator = cirq.Simulator()
+results = []
+for circuit in circuits:
+  results.append(simulator.simulate(circuit))
+
+for i in range(len(results)):
+  print(f"Result for letter " + message[i])
+  print(results[i])
+  print(" ")
+  print("---------------")
+  print(" ")
